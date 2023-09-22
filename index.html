@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: none;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="profilePic" src="https://images.unsplash.com/photo-1694939200128-72adf7a5d054?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+    </div>
+    <br>
+    <label for="for-profile">Update image</label>
+    <br>
+    <input type="file" accept="image/jpeg,image/png,image/jpg" id="for-profile" >
+    <script >
+
+
+        const profilePic = document.getElementById('profilePic')
+        const inputfile = document.getElementById('for-profile')
+
+        inputfile.onchange = function(){
+            profilePic.src = URL.createObjectURL(inputfile.files[0])
+        }
+
+    </script>
+</body>
+</html>
