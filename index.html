@@ -34,10 +34,13 @@
         const profilePic = document.getElementById('profilePic')
         const inputfile = document.getElementById('for-profile')
 
-        inputfile.onchange = function(){
+        // inputfile.onchange = function(){
+        //     profilePic.src = URL.createObjectURL(inputfile.files[0])
+        // }
+        inputfile.addEventListener('input',function(){
             profilePic.src = URL.createObjectURL(inputfile.files[0])
-        }
 
+        })
     </script>
 </body>
 </html>
